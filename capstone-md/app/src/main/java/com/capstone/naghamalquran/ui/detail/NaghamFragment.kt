@@ -1,4 +1,4 @@
-package com.capstone.naghamalquran.ui.dashboard
+package com.capstone.naghamalquran.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.capstone.naghamalquran.databinding.FragmentDashboardBinding
+import com.capstone.naghamalquran.databinding.FragmentDetailBinding
 
-class DashboardFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+class NaghamFragment : Fragment() {
+
+    private var _binding: FragmentDetailBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +23,14 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val naghamViewModel =
+            ViewModelProvider(this).get(NaghamViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        naghamViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

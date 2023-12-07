@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Nagham Alquran</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_detail">List Nagham</string>
+    <string name="title_vip">VIP</string>
     <string name="txt_click_me">Click me</string>
+    <string name="btn_hear_me">Dengarkan</string>
 </resources>

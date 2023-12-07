@@ -1,10 +1,10 @@
-package com.capstone.naghamalquran.ui.notifications
+package com.capstone.naghamalquran.ui.vip
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class VipViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is notifications Fragment"

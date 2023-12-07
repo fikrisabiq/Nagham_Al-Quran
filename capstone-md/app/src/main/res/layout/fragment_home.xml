@@ -4,23 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.prediction.HomeFragment">
 
+
+    <ImageButton
+        android:id="@+id/btn_record"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="196dp"
+        android:background="@drawable/rounded_button_background"
+        android:contentDescription="Voice Recognition Button"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_mic"
+        android:text="@string/txt_click_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/roundedButton"
-        android:layout_width="221dp"
-        android:layout_height="214dp"
-        android:background="@drawable/rounded_button_background"
-        android:backgroundTint="@color/colorNavbar"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="@string/txt_click_me"
-        android:textColor="@color/colorClick"
+        android:id="@+id/btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="152dp"
+        android:text="@string/btn_hear_me"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.479" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_record"
+        app:layout_constraintStart_toStartOf="@+id/btn_record" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

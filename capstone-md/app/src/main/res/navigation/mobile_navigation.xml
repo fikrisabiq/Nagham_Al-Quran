@@ -7,20 +7,20 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.capstone.naghamalquran.ui.home.HomeFragment"
+        android:name="com.capstone.naghamalquran.ui.prediction.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home"
         />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.capstone.naghamalquran.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_detail"
+        android:name="com.capstone.naghamalquran.ui.detail.NaghamFragment"
+        android:label="@string/title_detail"
+        tools:layout="@layout/fragment_detail" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.capstone.naghamalquran.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_vip"
+        android:name="com.capstone.naghamalquran.ui.vip.VipFragment"
+        android:label="@string/title_vip"
+        tools:layout="@layout/fragment_vip" />
 </navigation>
