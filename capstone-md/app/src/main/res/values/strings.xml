@@ -5,4 +5,96 @@
     <string name="title_vip">VIP</string>
     <string name="txt_click_me">Click me</string>
     <string name="btn_hear_me">Dengarkan</string>
+    <string name="txt_tipe_nagham">Tipe Nagham</string>
+    <string name="txt_deskripsi_singkat">Deskripsi singkat</string>
+
+    <string-array name="Nagham_Type">
+        <item>Bayati</item>
+        <item>Shaba</item>
+        <item>Hijaz</item>
+        <item>Rast</item>
+        <item>Sika</item>
+        <item>Jiharkah</item>
+        <item>Nahawand</item>
+    </string-array>
+
+    <string-array name="Short_Description">
+        <item>1st Student</item>
+        <item>1st Student</item>
+        <item>1st Student</item>
+        <item>Special Grade</item>
+        <item>Doctor</item>
+        <item>Special Grade</item>
+        <item>Special Grade</item>
+    </string-array>
+
+    <string-array name="Long_Descrtion">
+        <item>Yuji Itadori (虎いた杖どり悠ゆう仁じ Itadori Yūji?) is the main protagonist of the Jujutsu Kaisen series. He is the son of Jin Itadori and Kaori Itadori. Yuji is the grandson of Wasuke Itadori who was living a normal life until he encountered Megumi and ate one of Sukunas fingers. After becoming Sukuna vessel, Yuji began attending Tokyo Jujutsu High alongside Megumi and Nobara as first-year students.</item>
+        <item>Megumi Fushiguro (伏ふし黒ぐろ恵めぐみ Fushiguro Megumi?) is the deuteragonist of the Jujutsu Kaisen series. He is a grade 2 jujutsu sorcerer and first-year student at Tokyo Jujutsu High alongside Yuji Itadori and Nobara Kugisaki. Megumi is the step-brother of Tsumiki Fushiguro and as the son of Toji Fushiguro, Megumi is also a descendant of the Zenin Family. Megumi was born outside the clan as Toji trump card and was eventually found by Satoru Gojo, who mentored him and enrolled him at Jujutsu High as his student.</item>
+        <item>Nobara Kugisaki (釘くぎ崎さき野の薔ば薇ら Kugisaki Nobara?) is the tritagonist of the Jujutsu Kaisen series. She is a first-year student and grade 3 jujutsu sorcerer at Tokyo Jujutsu High studying under Satoru Gojo alongside Yuji and Megumi.</item>
+        <item>Satoru Gojo (五ご条じょう悟さとる Gojō Satoru?) is one of the main protagonists of the Jujutsu Kaisen series. He is a special grade jujutsu sorcerer and widely recognized as the strongest in the world. Satoru is the pride of the Gojo Family, the first person to inherit both the Limitless and the Six Eyes in four hundred years. He works as a teacher at the Tokyo Jujutsu High and uses his influence to protect and train strong young allies.</item>
+        <item>Shoko Ieiri (家いえ入いり硝しょう子こ Ieiri Shōko?) is a character in the Jujutsu Kaisen series. She is an alumnus of Tokyo Jujutsu High, having been classmates with Satoru Gojo and Suguru Geto. After graduating into a full-fledged jujutsu sorcerer, Shoko became the schools primary doctor.</item>
+        <item>Suguru Geto (夏げ油とう傑すぐる Getō Suguru?) is an antagonist in both the Jujutsu Kaisen series and its prequel Jujutsu Kaisen 0: Jujutsu High. He was originally a student of Masamichi Yaga alongside Satoru Gojo and Shoko Ieiri at Tokyo Jujutsu High. His experiences as a jujutsu sorcerer bred a deep hatred for non-sorcerers, leading to an incident where Suguru massacred over a hundred civilians in a single night. He was expelled from Jujutsu High and came to be known as the worst of all curse users.</item>
+        <item>Yuta Okkotsu (乙おっ骨こつ憂ゆう太た Okkotsu Yūta?) is a major supporting character in the Jujutsu Kaisen series and the main protagonist of its prequel series, Jujutsu Kaisen 0: Jujutsu High. He was initially a special grade cursed human haunted by his late childhood friend, Rika Orimoto. Satoru Gojo mentored Yuta and enrolled him at Tokyo Jujutsu High. \nYuta is currently a second-year student at Jujutsu High where he works as a jujutsu sorcerer. He was training overseas in Africa with Miguel until after the Shibuya Incident when he returned to Tokyo.</item>
+    </string-array>
+
+    <integer-array name="nagham_pict">
+    <item>@drawable/ic_star</item>
+    <item>@drawable/ic_star</item>
+    <item>@drawable/ic_star</item>
+    <item>@drawable/ic_star</item>
+    <item>@drawable/ic_star</item>
+    <item>@drawable/ic_star</item>
+    <item>@drawable/ic_star</item>
+
+
+        <!--        <item>https://static.wikia.nocookie.net/jujutsu-kaisen/images/a/ac/Yuji_Itadori_%28Volume_1%29.png/revision/latest/scale-to-width-down/1000?cb=20200611150621</item>-->
+        <!--        <item>https://static.wikia.nocookie.net/jujutsu-kaisen/images/0/08/Megumi_Fushiguro.png/revision/latest/scale-to-width-down/1000?cb=20200530162546</item>-->
+        <!--        <item>https://static.wikia.nocookie.net/jujutsu-kaisen/images/7/7a/Nobara_Kugisaki.png/revision/latest/scale-to-width-down/1000?cb=20200530163538</item>-->
+        <!--        <item>https://static.wikia.nocookie.net/jujutsu-kaisen/images/5/53/Satoru_Gojo_%28Full%29.png/revision/latest/scale-to-width-down/1000?cb=20230607162650</item>-->
+        <!--        <item>https://static.wikia.nocookie.net/jujutsu-kaisen/images/8/82/Shoko_Ieiri.png/revision/latest?cb=20200131015731</item>-->
+        <!--        <item>https://static.wikia.nocookie.net/jujutsu-kaisen/images/6/61/Suguru_Geto.png/revision/latest?cb=20200530155533</item>-->
+        <!--        <item>https://static.wikia.nocookie.net/jujutsu-kaisen/images/7/79/Yuta_Okkotsu_%28Chapter_137%29.png/revision/latest?cb=20210201190010</item>-->
+        <!--        <item>https://static.wikia.nocookie.net/jujutsu-kaisen/images/3/39/Maki_Zenin_%28Volume_22%29.png/revision/latest?cb=20230206185342</item>-->
+        <!--        <item>https://static.wikia.nocookie.net/jujutsu-kaisen/images/4/41/Toge_Inumaki_with_a_megaphone.png/revision/latest?cb=20210318040334</item>-->
+        <!--        <item>https://static.wikia.nocookie.net/jujutsu-kaisen/images/0/00/Panda.png/revision/latest?cb=20201019020000</item>-->
+    </integer-array >
+
+    <string-array name="Nagham_Vip_Type">
+        <item>Shaba</item>
+        <item>Shaba</item>
+        <item>Shaba</item>
+        <item>Shaba</item>
+        <item>Shaba</item>
+    </string-array>
+
+    <string-array name="Nagham_Vip_Sub_Type">
+        <item>Tausyih Shaba Ashli</item>
+        <item>Tausyih Jawab Shaba</item>
+        <item>Tausyih Jawab Shaba Maalajam</item>
+        <item>Tausyih Shaba Ashli 2</item>
+        <item>Tausyih Jawab Shaba Maalbastanjar</item>
+    </string-array>
+
+    <string-array name="arab">
+        <item>Bayati</item>
+        <item>Shaba</item>
+        <item>Hijaz</item>
+        <item>Rast</item>
+        <item>Sika</item>
+    </string-array>
+
+    <string-array name="audio_path">
+        <item>android.resource:raw/tausyih_jawab_shaba_maalajam_v2_a_3_0.wav</item>
+        <item>android.resource:raw/</item>
+        <item>android.resource:raw/</item>
+        <item>android.resource:raw/</item>
+        <item>android.resource:raw/</item>
+    </string-array>
+
+    <string-array name="url_audio">
+        <item>https://drive.google.com/file/d/1oMmG8BmvYl64nerR_GzirbckX2y1h2gI/view?usp=drive_link</item>
+    </string-array>
+
+
 </resources>

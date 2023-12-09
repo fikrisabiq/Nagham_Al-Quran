@@ -14,7 +14,7 @@
 
     <fragment
         android:id="@+id/navigation_detail"
-        android:name="com.capstone.naghamalquran.ui.detail.NaghamFragment"
+        android:name="com.capstone.naghamalquran.ui.type.NaghamFragment"
         android:label="@string/title_detail"
         tools:layout="@layout/fragment_detail" />
 

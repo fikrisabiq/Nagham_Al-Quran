@@ -1,4 +1,4 @@
-package com.capstone.naghamalquran.ui.detail
+package com.capstone.naghamalquran.ui.type
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
