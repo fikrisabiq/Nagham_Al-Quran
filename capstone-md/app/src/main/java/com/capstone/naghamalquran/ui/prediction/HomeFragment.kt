@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.RotateAnimation
+import android.view.animation.ScaleAnimation
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
@@ -86,20 +87,38 @@ class HomeFragment : Fragment() {
 
         isRecording = true
 
-        // Rotate animation for the record button
-        val rotateAnimation = RotateAnimation(
-            0f,
-            360f,
+//        // Rotate animation for the record button
+//        val rotateAnimation = RotateAnimation(
+//            0f,
+//            360f,
+//            Animation.RELATIVE_TO_SELF,
+//            0.5f,
+//            Animation.RELATIVE_TO_SELF,
+//            0.5f
+//        ).apply {
+//            duration = 1000
+//            repeatCount = Animation.INFINITE
+//        }
+//
+//        binding.btnRecord.startAnimation(rotateAnimation)
+
+        // Scale animation for the record button
+        val scaleAnimation = ScaleAnimation(
+            1f,
+            1.2f,
+            1f,
+            1.2f,
             Animation.RELATIVE_TO_SELF,
             0.5f,
             Animation.RELATIVE_TO_SELF,
             0.5f
         ).apply {
-            duration = 1000
+            duration = 500 // Ubah durasi animasi sesuai kebutuhan
+            repeatMode = Animation.REVERSE
             repeatCount = Animation.INFINITE
         }
 
-        binding.btnRecord.startAnimation(rotateAnimation)
+        binding.btnRecord.startAnimation(scaleAnimation)
 
     }
 
