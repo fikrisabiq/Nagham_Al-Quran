@@ -1,5 +1,6 @@
 package com.capstone.naghamalquran.ui.type
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,13 @@ class NaghamAdapter(private val listNaghamTypes: List<NaghamList>) : RecyclerVie
         holder.naghamType.text = type
         holder.naghamShortDesc.text = desc
         holder.naghamPict.setImageResource(img)
+
+        holder.itemView.setOnClickListener {
+            val intentDetail = Intent(holder.itemView.context, NaghamDetail::class.java)
+            intentDetail.putExtra("key_nagham", listNaghamTypes[holder.adapterPosition])
+
+            holder.itemView.context.startActivity(intentDetail)
+        }
     }
 
 

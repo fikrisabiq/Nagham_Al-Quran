@@ -7,7 +7,7 @@
     tools:context=".ui.vip.VipFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_list_nagham"
+        android:id="@+id/rv_list_vip"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
