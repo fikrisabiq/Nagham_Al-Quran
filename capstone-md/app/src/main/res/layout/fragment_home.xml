@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/btn_record"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
         android:layout_marginTop="196dp"
         android:background="@drawable/rounded_button_background"
         android:contentDescription="Voice Recognition Button"
@@ -18,7 +18,7 @@
         android:src="@drawable/ic_mic"
         android:text="@string/txt_click_me"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,13 +26,11 @@
         android:id="@+id/btn_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="148dp"
         android:text="@string/btn_hear_me"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_record"
         app:layout_constraintStart_toStartOf="@+id/btn_record" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

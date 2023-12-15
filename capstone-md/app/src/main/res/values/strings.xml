@@ -28,6 +28,7 @@
         <item>Bayati Syuri</item>
         <item>Bayati Suri Jawabuljawab</item>
         <item>Bayati Husaini</item>
+        <item>Bayati Ashli Jawab</item>
 
 
     </string-array>
@@ -58,41 +59,54 @@
 
 
     <!--    VIP-->
-    <string-array name="Nagham_Vip_Type">
-        <item>Shaba</item>
-        <item>Shaba</item>
-        <item>Shaba</item>
-        <item>Shaba</item>
-        <item>Shaba</item>
+    <integer-array name="nagham_pict_vip">
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+    </integer-array>
+
+    <string-array name="Nagham_Type_vip">
+        <item>Full Syair VIP</item>
+        <item>Bayati Ashli Qorror</item>
+        <item>Bayati Ashli Nawa</item>
+        <item>Bayati Syuri</item>
+        <item>Bayati Suri Jawabuljawab</item>
+        <item>Bayati Husaini</item>
+        <item>Bayati Ashli Jawab</item>
+
+
     </string-array>
 
-    <string-array name="Nagham_Vip_Sub_Type">
-        <item>Tausyih Shaba Ashli</item>
-        <item>Tausyih Jawab Shaba</item>
-        <item>Tausyih Jawab Shaba Maalajam</item>
-        <item>Tausyih Shaba Ashli 2</item>
-        <item>Tausyih Jawab Shaba Maalbastanjar</item>
-    </string-array>
-
-    <string-array name="arab">
+    <string-array name="Short_Description_vip">
         <item>Bayati</item>
-        <item>Shaba</item>
-        <item>Hijaz</item>
-        <item>Rast</item>
-        <item>Sika</item>
+        <item>Bayati</item>
+        <item>Bayati</item>
+        <item>Bayati</item>
+        <item>Bayati</item>
+        <item>Bayati</item>
+        <item>Bayati</item>
+
+        <item></item>
     </string-array>
 
-    <string-array name="audio_path">
-        <item>android.resource:raw/tausyih_jawab_shaba_maalajam_v2_a_3_0.wav</item>
-        <item>android.resource:raw/</item>
-        <item>android.resource:raw/</item>
-        <item>android.resource:raw/</item>
-        <item>android.resource:raw/</item>
+    <string-array name="Long_Descrtion_vip">
+        <item>نُوْرُ النَّبِيّ عَلىَ الْعَوَالِمِ اَسْفَارَا * فَاَبَانَ اَسْبَابَ الرَّشَادِ وَاَظْهَارَا وَشَرِيْعَةُ الْاِسْلَامِ رَاقَ رُوَاعُهَا * وَالْكُفْرُاَصْبَحَ جَيْشُهُ مُتَقَهْقِرَا لَمَّااَتٰى خَيْرُ الْاَنَامِ بِدِيْنِهِ * وَنْحَلَّ مَا عَقَدَالْغُوَاةَ مِنَ الْعُرٰى هَامُوْاجَمِيْعًا بِالنَّبِىِّ وَدِيْنِهِ * وَالْكُفْرُ بَعْدَ الْعُرْفِ صَارَ مُنَكَّرَا وَاسْتَبْشَرُوْا بِالْمُصْطَفٰى وَبِنُوْرِهِ * وَالْكُلُّ صَاحَ مُهَلِّلًا وَمُكَبِّرَا</item>
+        <item>نُوْرُ النَّبِيّ عَلىَ الْعَوَالِمِ اَسْفَارَا</item>
+        <item>فَاَبَانَ اَسْبَابَ الرَّشَادِ وَاَظْهَارَا</item>
+        <item>وَشَرِيْعَةُ الْاِسْلَامِ رَاقَ رُوَاعُهَا * وَالْكُفْرُاَصْبَحَ جَيْشُهُ مُتَقَهْقِرَا</item>
+        <item>وَشَرِيْعَةُ الْاِسْلَامِ رَاقَ رُوَاعُهَا</item>
+        <item>لَمَّااَتٰى خَيْرُ الْاَنَامِ بِدِيْنِهِ * وَنْحَلَّ مَا عَقَدَالْغُوَاةَ مِنَ الْعُرٰى هَامُوْاجَمِيْعًا بِالنَّبِىِّ وَدِيْنِهِ * وَالْكُفْرُ بَعْدَ الْعُرْفِ صَارَ مُنَكَّرَا وَاسْتَبْشَرُوْا بِالْمُصْطَفٰى وَبِنُوْرِهِ</item>
+        <item>وَالْكُلُّ صَاحَ مُهَلِّلًا وَمُكَبِّرَا</item>
+
+
     </string-array>
 
-    <string-array name="url_audio">
-        <item>https://drive.google.com/file/d/1oMmG8BmvYl64nerR_GzirbckX2y1h2gI/view?usp=drive_link</item>
-    </string-array>
+
+
 
 
 </resources>
