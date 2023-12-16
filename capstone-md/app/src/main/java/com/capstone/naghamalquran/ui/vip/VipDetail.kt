@@ -98,8 +98,8 @@ class VipDetail : AppCompatActivity() {
 
     private fun getAudioResource(keyNagham: String): Int {
         return when (keyNagham) {
-            "Full Syair" -> R.raw.tausyih_shaba_ashli_v2_a
-            "Bayati Ashli Qorror" -> R.raw.tausyih_shaba_ashli_v2_a
+            "Full Syair" -> R.raw.tausyih_bayati
+            "Bayati Ashli Qorror" -> R.raw.tausyih_bayati
 //            "Bayati Ashli Nawa" -> R.raw.nama_file_bayati_ashli_nawa
 //            "Bayati Syuri" -> R.raw.nama_file_bayati_syuri
 //            "Bayati Suri Jawabuljawab" -> R.raw.nama_file_bayati_suri_jawabuljawab

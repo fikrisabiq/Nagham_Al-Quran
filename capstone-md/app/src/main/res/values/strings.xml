@@ -1,40 +1,120 @@
 <resources>
     <string name="app_name">Nagham Alquran</string>
-    <string name="title_home">Home</string>
-    <string name="title_detail">List Nagham</string>
-    <string name="title_vip">VIP</string>
+    <string name="title_home">Prediksi</string>
+    <string name="title_detail">Tausyih</string>
+    <string name="title_vip">Tilawah</string>
     <string name="txt_click_me">Click me</string>
     <string name="btn_hear_me">Dengarkan</string>
     <string name="txt_tipe_nagham">Tipe Nagham</string>
     <string name="txt_deskripsi_singkat">Deskripsi singkat</string>
     <string name="arab">نُوْرُ النَّبِيّ عَلىَ الْعَوَالِمِ اَسْفَارَا</string>
+    <string name="btn_play">Play</string>
+    <string name="btn_resume">Resume</string>
+    <string name="btn_pause">Pause</string>
 
 
     <!--    Umum-->
     <integer-array name="nagham_pict">
+        <!--1. Bayati-->
         <item>@drawable/ic_star</item>
         <item>@drawable/ic_star</item>
         <item>@drawable/ic_star</item>
         <item>@drawable/ic_star</item>
         <item>@drawable/ic_star</item>
         <item>@drawable/ic_star</item>
+
+        <!--2. Shaba-->
         <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+
+        <!--3. Hijaz-->
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+
+        <!--4. Rast-->
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+
+        <!--5. Sika-->
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+
+        <!--6. Jiharkah-->
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+
+        <!--7. Nahawand-->
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+        <item>@drawable/ic_star</item>
+
     </integer-array>
 
     <string-array name="Nagham_Type">
-        <item>Full Syair</item>
+        <!--1. Bayati-->
+        <item>Tausyih Bayati</item>
         <item>Bayati Ashli Qorror</item>
         <item>Bayati Ashli Nawa</item>
         <item>Bayati Syuri</item>
-        <item>Bayati Suri Jawabuljawab</item>
         <item>Bayati Husaini</item>
         <item>Bayati Ashli Jawab</item>
 
+        <!--2. Shaba-->
+        <item>Tausyih Shaba</item>
+        <item>Shaba Ashli</item>
+        <item>Jawab Shaba</item>
+        <item>Jawab Shaba Maalajam</item>
+        <item>Shaba Ashli 2</item>
+        <item>Jawab Shaba Maalbastanjar</item>
+
+        <!--3. Hijaz-->
+        <item>Tausyih Hijaz</item>
+        <item>Hijaz Ashli</item>
+        <item>Hijaz Kar</item>
+        <item>Hijaz Karkur</item>
+        <item>Hijaz Kur</item>
+
+        <!--4. Rast-->
+        <item>Tausyih Rast</item>
+        <item>Rast Ashli</item>
+        <item>Rast Alanawa</item>
+
+        <!--5. Sika-->
+        <item>Tausyih Sika</item>
+        <item>Sika Ashli</item>
+        <item>Sika Turki</item>
+        <item>Sika Mishri</item>
+
+        <!--6. Jiharkah-->
+        <item>Tausyih Jiharkah</item>
+        <item>Jiharkah Ashli</item>
+        <item>Jiharkah Jawab</item>
+        <item>Jiharkah Ashli 2</item>
+        <item>Jiharkah Jawab 2</item>
+
+        <!--7. Nahawand-->
+        <item>Tausyih Nahawand</item>
+        <item>Nahawand Ashli</item>
+        <item>Nahawand Jawab</item>
 
     </string-array>
 
     <string-array name="Short_Description">
-        <item>Bayati</item>
+        <!--1. Bayati-->
         <item>Bayati</item>
         <item>Bayati</item>
         <item>Bayati</item>
@@ -42,18 +122,92 @@
         <item>Bayati</item>
         <item>Bayati</item>
 
-        <item></item>
+        <!--2. Shaba-->
+        <item>Shaba</item>
+        <item>Shaba</item>
+        <item>Shaba</item>
+        <item>Shaba</item>
+        <item>Shaba</item>
+        <item>Shaba</item>
+
+        <!--3. Hiaz-->
+        <item>Hiaz</item>
+        <item>Hiaz</item>
+        <item>Hiaz</item>
+        <item>Hiaz</item>
+        <item>Hiaz</item>
+
+        <!--4. Rast-->
+        <item>Rast</item>
+        <item>Rast</item>
+        <item>Rast</item>
+
+        <!--5. Sika-->
+        <item>Sika</item>
+        <item>Sika</item>
+        <item>Sika</item>
+        <item>Sika</item>
+
+        <!--6. Jiharkah-->
+        <item>Jiharkah</item>
+        <item>Jiharkah</item>
+        <item>Jiharkah</item>
+        <item>Jiharkah</item>
+        <item>Jiharkah</item>
+
+        <!--7. Nahawand-->
+        <item>Nahawand</item>
+        <item>Nahawand</item>
+        <item>Nahawand</item>
+
     </string-array>
 
     <string-array name="Long_Descrtion">
-        <item>نُوْرُ النَّبِيّ عَلىَ الْعَوَالِمِ اَسْفَارَا * فَاَبَانَ اَسْبَابَ الرَّشَادِ وَاَظْهَارَا وَشَرِيْعَةُ الْاِسْلَامِ رَاقَ رُوَاعُهَا * وَالْكُفْرُاَصْبَحَ جَيْشُهُ مُتَقَهْقِرَا لَمَّااَتٰى خَيْرُ الْاَنَامِ بِدِيْنِهِ * وَنْحَلَّ مَا عَقَدَالْغُوَاةَ مِنَ الْعُرٰى هَامُوْاجَمِيْعًا بِالنَّبِىِّ وَدِيْنِهِ * وَالْكُفْرُ بَعْدَ الْعُرْفِ صَارَ مُنَكَّرَا وَاسْتَبْشَرُوْا بِالْمُصْطَفٰى وَبِنُوْرِهِ * وَالْكُلُّ صَاحَ مُهَلِّلًا وَمُكَبِّرَا</item>
+        <!--1. Bayati-->
+        <item>نُوْرُ النَّبِيّ عَلىَ الْعَوَالِمِ اَسْفَارَا *\n فَاَبَانَ اَسْبَابَ الرَّشَادِ وَاَظْهَارَا وَشَرِيْعَةُ الْاِسْلَامِ رَاقَ رُوَاعُهَا *\n وَالْكُفْرُاَصْبَحَ جَيْشُهُ مُتَقَهْقِرَا لَمَّااَتٰى خَيْرُ الْاَنَامِ بِدِيْنِهِ *\n وَنْحَلَّ مَا عَقَدَالْغُوَاةَ مِنَ الْعُرٰى هَامُوْاجَمِيْعًا بِالنَّبِىِّ وَدِيْنِهِ *\n وَالْكُفْرُ بَعْدَ الْعُرْفِ صَارَ مُنَكَّرَا وَاسْتَبْشَرُوْا بِالْمُصْطَفٰى وَبِنُوْرِهِ *\n وَالْكُلُّ صَاحَ مُهَلِّلًا وَمُكَبِّرَا</item>
         <item>نُوْرُ النَّبِيّ عَلىَ الْعَوَالِمِ اَسْفَارَا</item>
         <item>فَاَبَانَ اَسْبَابَ الرَّشَادِ وَاَظْهَارَا</item>
-        <item>وَشَرِيْعَةُ الْاِسْلَامِ رَاقَ رُوَاعُهَا * وَالْكُفْرُاَصْبَحَ جَيْشُهُ مُتَقَهْقِرَا</item>
-        <item>وَشَرِيْعَةُ الْاِسْلَامِ رَاقَ رُوَاعُهَا</item>
-        <item>لَمَّااَتٰى خَيْرُ الْاَنَامِ بِدِيْنِهِ * وَنْحَلَّ مَا عَقَدَالْغُوَاةَ مِنَ الْعُرٰى هَامُوْاجَمِيْعًا بِالنَّبِىِّ وَدِيْنِهِ * وَالْكُفْرُ بَعْدَ الْعُرْفِ صَارَ مُنَكَّرَا وَاسْتَبْشَرُوْا بِالْمُصْطَفٰى وَبِنُوْرِهِ</item>
+        <item>وَشَرِيْعَةُ الْاِسْلَامِ رَاقَ رُوَاعُهَا *\n وَالْكُفْرُاَصْبَحَ جَيْشُهُ مُتَقَهْقِرَا</item>
+        <item>لَمَّااَتٰى خَيْرُ الْاَنَامِ بِدِيْنِهِ *\n وَنْحَلَّ مَا عَقَدَالْغُوَاةَ مِنَ الْعُرٰى هَامُوْاجَمِيْعًا بِالنَّبِىِّ وَدِيْنِهِ *\n وَالْكُفْرُ بَعْدَ الْعُرْفِ صَارَ مُنَكَّرَا وَاسْتَبْشَرُوْا بِالْمُصْطَفٰى وَبِنُوْرِهِ</item>
         <item>وَالْكُلُّ صَاحَ مُهَلِّلًا وَمُكَبِّرَا</item>
 
+        <!--2. Shaba-->
+        <item>اَرٰى طَيْرًا عَلَى الْغُصْنِ يُنَادِى *\n اَتَتْ بُشْرٰى لِمَجْرُوْحِ الْفُؤَادِى بَدَتْ لَيْلًا فَاَضْحٰى عَاشِقُوْهَا *\n رُكُوْعًا سُجُوْدًا فِى كُلِّ وَادِى</item>
+        <item>اَرٰى طَيْرًا عَلَى الْغُصْنِ يُنَادِى</item>
+        <item>اَتَتْ بُشْرٰى لِمَجْرُوْحِ الْفُؤَادِى</item>
+        <item>اَتَتْ بُشْرٰى لِمَجْرُوْحِ الْفُؤَادِى</item>
+        <item>بَدَتْ لَيْلًا فَاَضْحٰى عَاشِقُوْهَا</item>
+        <item>رُكُوْعًا سُجُوْدًا فِى كُلِّ وَادِى</item>
+
+        <!--3. Hijaz-->
+        <item>يَاوَرْدَةً وَسْطَ الرِّيَاضِ مُطِلَّةً *\n تُزْرِىْ بِوَجْهِ ذَاتِ خَضْرٍ عَاطِرَا اَللّٰهُ زَادَ مُحَمَّدًا تَعْظِيْمًا *\n وَهَبَاهُ فَضْلاً مِنْ لَدُنْهُ عَمِيْمًا صَلُّوْا عَلَيْهِ وَسَلِّمُوا تَسْلِيْمًا *\n صَلُّوْا عَلَيْهِ وَسَلِّمُوا تَسْلِيْمًا يَا مَنْ سَمَا السَّبْعَ اطِّبَاقَ مِنَ الْعُلَا *\n وَدَنَا وَكَلَّمَ رَبَّهُ وَتَشَرَّفَ َاَنْتَ الَّذِىْ وَطِئَ الْبِسَاطَ بِنَعْلِهِ *\n وَبِخَلْعِهِ فِى الطُّوْرِ مُوْسٰى كُلِّفَا</item>
+        <item>يَاوَرْدَةً وَسْطَ الرِّيَاضِ مُطِلَّةً *\n تُزْرِىْ بِوَجْهِ ذَاتِ خَضْرٍ عَاطِرَا اَللّٰهُ زَادَ مُحَمَّدًا تَعْظِيْمًا *\n وَهَبَاهُ فَضْلاً مِنْ لَدُنْهُ عَمِيْمًا صَلُّوْا عَلَيْهِ وَسَلِّمُوا تَسْلِيْمًا *\n صَلُّوْا عَلَيْهِ وَسَلِّمُوا تَسْلِيْمًا</item>
+        <item>يَا مَنْ سَمَا السَّبْعَ اطِّبَاقَ مِنَ الْعُلَا</item>
+        <item>وَدَنَا وَكَلَّمَ رَبَّهُ وَتَشَرَّفَ</item>
+        <item>اَنْتَ الَّذِىْ وَطِئَ الْبِسَاطَ بِنَعْلِهِ *\n وَبِخَلْعِهِ فِى الطُّوْرِ مُوْسٰى كُلِّفَا</item>
+
+        <!--4. Rast-->
+        <item>َيَاسَيِّدَ الْكَوْنَيْنَ يَا عَلَمَ الْهُدٰى *\n يَا بَدْرَتِمٍّ فِى الْوُجُوْدِ عَلَى الْمَدَى َيَا كَوْكَبًا فَوْقَ الْبُدُوْرِ بِحُسْنِهِ *\n يَا مُرْسَلًا بِالْحَقِّ دَوْمًا سَرْمَدَا</item>
+        <item>َيَاسَيِّدَ الْكَوْنَيْنَ يَا عَلَمَ الْهُدٰى *\n يَا بَدْرَتِمٍّ فِى الْوُجُوْدِ عَلَى الْمَدَى</item>
+        <item>َيَا كَوْكَبًا فَوْقَ الْبُدُوْرِ بِحُسْنِهِ *\n يَا مُرْسَلًا بِالْحَقِّ دَوْمًا سَرْمَدَا</item>
+
+        <!--5. Sika-->
+        <item>يَا مَنْ يُرَجَّى فِى الْقِيَا مَةِ حَيْثُ لَا *\n اُمٌ تُرَجَّى فِى النَّجَاةِ وَلَٓااَبُ</item>
+        <item>يَا مَنْ يُرَجَّى فِى الْقِيَا مَةِ حَيْثُ لَا *\n اُمٌ تُرَجَّى فِى النَّجَاةِ وَلَٓااَبُ</item>
+        <item>يَا مَنْ يُرَجَّى فِى الْقِيَا مَةِ حَيْثُ لَا</item>
+        <item>اُمٌ تُرَجَّى فِى النَّجَاةِ وَلَٓااَبُ</item>
+
+        <!--6. Jiharkah-->
+        <item>اَللّٰهُ زَادَ مُحَمَّدًا تَعْظِيْمًا *\n وَهَبَاهُ فَضْلًا مِنْ لَدُنْهُ عَمِيْمًا وَاخْتَصَّهُ فِى الْمُرْسَلِيْنَ كَلِيْمًا *\n ذَارَأْفَةٍ بِالْمُؤْمِنِيْنَ رَحِيْمًا</item>
+        <item>اَللّٰهُ زَادَ مُحَمَّدًا تَعْظِيْمًا</item>
+        <item>وَهَبَاهُ فَضْلًا مِنْ لَدُنْهُ عَمِيْمًا</item>
+        <item>وَاخْتَصَّهُ فِى الْمُرْسَلِيْنَ كَلِيْمًا</item>
+        <item>وَاخْتَصَّهُ فِى الْمُرْسَلِيْنَ كَلِيْمًا *\n ذَارَأْفَةٍ بِالْمُؤْمِنِيْنَ رَحِيْمًا</item>
+
+        <!--7. Nahawand-->
+        <item>اِلٰى كَمْ ذَا التَّجَٰالِّى وَذَاالتَّجَانِّى *\n اِمَّا يَكْفِيْكَ يَا غُصْنَ التَّسَٰانِّى</item>
+        <item>اِلٰى كَمْ ذَا التَّجَٰالِّى وَذَاالتَّجَانِّى</item>
+        <item>اِلٰى كَمْ ذَا التَّجَٰالِّى وَذَاالتَّجَانِّى *\n اِمَّا يَكْفِيْكَ يَا غُصْنَ التَّسَٰانِّى</item>
 
     </string-array>
 

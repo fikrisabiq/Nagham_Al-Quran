@@ -65,7 +65,7 @@ class NaghamDetail : AppCompatActivity() {
 
 // Menambahkan pendengar OnCompletionListener untuk memulai ulang audio saat selesai
             mediaPlayer?.setOnCompletionListener {
-                hearMeButton.text = "Play" // Ganti dengan teks yang sesuai
+                hearMeButton.text = getString(R.string.btn_play) // Ganti dengan teks yang sesuai
                 mediaPlayer?.seekTo(0) // Mengatur pemutaran kembali ke awal
             }
 
@@ -74,11 +74,11 @@ class NaghamDetail : AppCompatActivity() {
                 // Memeriksa apakah MediaPlayer sedang berjalan
                 if (mediaPlayer?.isPlaying == true) {
                     mediaPlayer?.pause()
-                    hearMeButton.text = "Dengarkan" // Ganti dengan teks yang sesuai
+                    hearMeButton.text = getString(R.string.btn_resume) // Ganti dengan teks yang sesuai
                 } else {
                     // Jika tidak sedang berjalan, mulai memutar
                     mediaPlayer?.start()
-                    hearMeButton.text = "Pause" // Ganti dengan teks yang sesuai
+                    hearMeButton.text = getString(R.string.btn_pause) // Ganti dengan teks yang sesuai
                 }
             }
         }
@@ -98,12 +98,45 @@ class NaghamDetail : AppCompatActivity() {
 
     private fun getAudioResource(keyNagham: String): Int {
         return when (keyNagham) {
-            "Full Syair" -> R.raw.tausyih_shaba_ashli_v2_a
-            "Bayati Ashli Qorror" -> R.raw.tausyih_shaba_ashli_v2_a
-//            "Bayati Ashli Nawa" -> R.raw.nama_file_bayati_ashli_nawa
-//            "Bayati Syuri" -> R.raw.nama_file_bayati_syuri
-//            "Bayati Suri Jawabuljawab" -> R.raw.nama_file_bayati_suri_jawabuljawab
-//            "Bayati Husaini" -> R.raw.nama_file_bayati_husaini
+            "Tausyih Bayati" -> R.raw.tausyih_bayati
+            "Bayati Ashli Qorror" -> R.raw.tausyih_bayati_ashli_qorror
+            "Bayati Ashli Nawa" -> R.raw.tausyih_bayati_ashli_nawa
+            "Bayati Syuri" -> R.raw.tausyih_bayati_syuri
+            "Bayati Husaini" -> R.raw.tausyih_bayati_husaini
+            "Bayati Ashli Jawab" -> R.raw.tausyih_bayati_ashli_jawab
+
+            "Tausyih Shaba" -> R.raw.tausyih_shaba
+            "Shaba Ashli" -> R.raw.tausyih_shaba_ashli
+            "Jawab Shaba" -> R.raw.tausyih_jawab_shaba
+            "Jawab Shaba Maalajam" -> R.raw.tausyih_jawab_shaba_maalajam
+            "Shaba Ashli 2" -> R.raw.tausyih_shaba_ashli_2
+            "Jawab Shaba Maalbastanjar" -> R.raw.tausyih_jawab_shaba_maalbastanjar
+
+            "Tausyih Hijaz" -> R.raw.tausyih_hijaz
+            "Hijaz Ashli" -> R.raw.tausyih_hijaz_ashli
+            "Hijaz Kar" -> R.raw.tausyih_hijaz_kar
+            "Hijaz Karkur" -> R.raw.tausyih_hijaz_karkur
+            "Hijaz Kur" -> R.raw.tausyih_hijaz_kur
+
+            "Tausyih Rast" -> R.raw.tausyih_rast
+            "Rast Ashli" -> R.raw.tausyih_rast_ashli
+            "Rast Alanawa" -> R.raw.tausyih_rast_alanawa
+
+            "Tausyih Sika" -> R.raw.tausyih_sika
+            "Sika Ashli" -> R.raw.tausyih_sika_ashli
+            "Sika Turki" -> R.raw.tausyih_sika_turki
+            "Sika Mishri" -> R.raw.tausyih_sika_mishri
+
+            "Tausyih Jiharkah" -> R.raw.tausyih_jiharkah
+            "Jiharkah Ashli" -> R.raw.tausyih_jiharkah_ashli
+            "Jiharkah Jawab" -> R.raw.tausyih_jiharkah_jawab
+            "Jiharkah Ashli 2" -> R.raw.tausyih_jiharkah_ashli_2
+            "Jiharkah Jawab 2" -> R.raw.tausyih_jiharkah_jawab_2
+
+            "Tausyih Nahawand" -> R.raw.tausyih_nahawand
+            "Nahawand Ashli" -> R.raw.tausyih_nahawand_ashli
+            "Nahawand Jawab" -> R.raw.tausyih_nahawand_jawab
+
             else -> R.raw.error // Ganti dengan file audio default atau resource lainnya
         }
     }
