@@ -33,6 +33,8 @@ class HomeFragment : Fragment() {
     private var isRecording = false
     private var audioFilePath: String? = null
 
+    private var isRecordingToastShown = false
+
     companion object {
         private const val REQUEST_PERMISSION_CODE = 1
     }
@@ -62,6 +64,20 @@ class HomeFragment : Fragment() {
             playAudio()
         }
 
+        // Menambahkan listener untuk perubahan fragment
+        parentFragmentManager.addOnBackStackChangedListener {
+            // Cek apakah sedang merekam, jika ya, tampilkan pesan peringatan dan kembalikan fragment
+            if (isRecording && !isRecordingToastShown) {
+                Toast.makeText(requireContext(), "Tidak bisa berpindah saat sedang merekam!", Toast.LENGTH_SHORT).show()
+                parentFragmentManager.popBackStack()
+                isRecordingToastShown = true
+            } else {
+                // Reset isRecordingToastShown ketika status recording berubah
+                isRecordingToastShown = false
+            }
+        }
+
+
         // Meminta izin rekam audio
         requestPermission()
 
@@ -69,7 +85,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun startRecording() {
-        val fileName = "audio_${UUID.randomUUID()}.wav"
+        //        val fileName = "audio_${UUID.randomUUID()}.wav"
+        val fileName = "audio_${System.currentTimeMillis()}.wav"
         audioFilePath = "${requireContext().externalCacheDir?.absolutePath}/$fileName"
 
         mediaRecorder = MediaRecorder().apply {
@@ -179,6 +196,13 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+
+        // Hentikan perekaman jika sedang berlangsung
+        if (isRecording) {
+            stopRecording()
+            Toast.makeText(requireContext(), "Perekaman dihentikan karena pindah fragment", Toast.LENGTH_SHORT).show()
+        }
+
         _binding = null
 
         // Pastikan untuk melepaskan sumber daya yang digunakan
