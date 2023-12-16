@@ -64,6 +64,8 @@
             android:background="@drawable/rounded_border_background"
             android:textColor="@color/colorClick"
             android:textSize="24sp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
 
