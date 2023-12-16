@@ -70,6 +70,7 @@ class HomeFragment : Fragment() {
             if (isRecording && !isRecordingToastShown) {
                 Toast.makeText(requireContext(), "Tidak bisa berpindah saat sedang merekam!", Toast.LENGTH_SHORT).show()
                 parentFragmentManager.popBackStack()
+                stopRecording()
                 isRecordingToastShown = true
             } else {
                 // Reset isRecordingToastShown ketika status recording berubah
