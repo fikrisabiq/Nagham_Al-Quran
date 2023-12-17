@@ -19,7 +19,18 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.capstone.naghamalquran.R
 import com.capstone.naghamalquran.databinding.FragmentHomeBinding
+import com.capstone.naghamalquran.ui.prediction.api.response.ApiResponse2
+import com.capstone.naghamalquran.ui.prediction.api.retrofit.ApiConfig
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.io.File
 import java.io.IOException
 import java.util.*
 
@@ -86,6 +97,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun startRecording() {
+        // Reset hasil pesan dari API
+        binding.resultPrediksi.text = getString(R.string.txt_hearing)
         //        val fileName = "audio_${UUID.randomUUID()}.wav"
         val fileName = "audio_${System.currentTimeMillis()}.wav"
         audioFilePath = "${requireContext().externalCacheDir?.absolutePath}/$fileName"
@@ -149,6 +162,49 @@ class HomeFragment : Fragment() {
 
         // Stop rotate animation for the record button
         binding.btnRecord.clearAnimation()
+
+        // Setelah merekam dihentikan, kirim file audio ke API
+        if (audioFilePath != null) {
+            val file = File(audioFilePath!!)
+            val requestFile = file.asRequestBody("audio/*".toMediaTypeOrNull())
+            val body = MultipartBody.Part.createFormData("file", file.name, requestFile)
+            // Menampilkan ProgressBar saat mengambil respons dari API
+            binding.progressBar.visibility = View.VISIBLE
+
+            // Anda mungkin perlu mengganti "notes" dengan parameter yang sesuai
+            val notes = "Catatan Pengguna"
+            val notesBody = RequestBody.create("text/plain".toMediaTypeOrNull(), notes)
+
+            // Kirim request ke API
+            val apiService = ApiConfig.getApiService()
+            val call = apiService.addAudio(notesBody, body)
+
+            call.enqueue(object : Callback<ApiResponse2> {
+                override fun onResponse(call: Call<ApiResponse2>, response: Response<ApiResponse2>) {
+                    if (response.isSuccessful) {
+                        // Tangani respons sukses di sini
+                        val result = response.body()
+                        binding.resultPrediksi.text = result?.message
+                    } else {
+                        // Tangani respons tidak sukses di sini
+                        Toast.makeText(requireContext(), "Gagal mengirim rekaman", Toast.LENGTH_SHORT).show()
+                        binding.resultPrediksi.text = ""
+                    }
+
+                    // Sembunyikan ProgressBar setelah mendapatkan respons dari API
+                    binding.progressBar.visibility = View.GONE
+                }
+
+                override fun onFailure(call: Call<ApiResponse2>, t: Throwable) {
+                    // Tangani kegagalan koneksi atau permintaan di sini
+                    Toast.makeText(requireContext(), "Koneksi Internet Anda terputus", Toast.LENGTH_SHORT).show()
+                    binding.resultPrediksi.text = ""
+
+                    // Sembunyikan ProgressBar saat terjadi kegagalan
+                    binding.progressBar.visibility = View.GONE
+                }
+            })
+        }
 
     }
 

@@ -27,10 +27,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="148dp"
-        android:text="@string/btn_hear_me"
+        android:text="@string/btn_play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_record"
         app:layout_constraintStart_toStartOf="@+id/btn_record" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/result_prediksi"
+        app:layout_constraintEnd_toEndOf="@+id/result_prediksi"
+        app:layout_constraintTop_toTopOf="@+id/result_prediksi"
+        app:layout_constraintBottom_toBottomOf="@+id/result_prediksi" />
+
+
+    <TextView
+        android:id="@+id/result_prediksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:textSize="24sp"
+        android:textColor="@color/colorClick"
+        app:layout_constraintEnd_toEndOf="@+id/btn_play"
+        app:layout_constraintStart_toStartOf="@+id/btn_play"
+        app:layout_constraintTop_toBottomOf="@+id/btn_play" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
