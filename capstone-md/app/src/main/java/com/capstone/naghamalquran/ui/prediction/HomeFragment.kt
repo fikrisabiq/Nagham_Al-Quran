@@ -1,12 +1,16 @@
 package com.capstone.naghamalquran.ui.prediction
 
 import android.Manifest
+import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Bundle
 import android.os.Environment
+import android.os.FileUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,9 +18,11 @@ import android.view.animation.Animation
 import android.view.animation.RotateAnimation
 import android.view.animation.ScaleAnimation
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.capstone.naghamalquran.R
@@ -31,6 +37,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
 import java.io.IOException
 import java.util.*
 
@@ -46,8 +54,12 @@ class HomeFragment : Fragment() {
 
     private var isRecordingToastShown = false
 
+    private lateinit var btnSave: Button // Add button declaration
+    private var currentRecordingName: String? = null // Variable to store the recording name
+
     companion object {
         private const val REQUEST_PERMISSION_CODE = 1
+        private const val SAVE_REQUEST_CODE = 123
     }
 
     override fun onCreateView(
@@ -87,6 +99,13 @@ class HomeFragment : Fragment() {
                 // Reset isRecordingToastShown ketika status recording berubah
                 isRecordingToastShown = false
             }
+        }
+
+        btnSave = binding.btnSave // Initialize the button from the layout
+
+        // Set onClickListener for the "Save" button
+        btnSave.setOnClickListener {
+            saveRecording()
         }
 
 
@@ -235,6 +254,49 @@ class HomeFragment : Fragment() {
         Toast.makeText(requireContext(), "No recorded audio available", Toast.LENGTH_SHORT).show()
         }
     }
+
+    private var fileIndex = 0
+    private fun saveRecording() {
+        if (audioFilePath != null) {
+
+            val recordingName = currentRecordingName ?: "audio_${fileIndex++}_nagham"
+            val fileName = "$recordingName.wav"
+
+            val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                addCategory(Intent.CATEGORY_OPENABLE)
+                type = "audio/wav"
+                putExtra(Intent.EXTRA_TITLE, fileName)
+            }
+
+            startActivityForResult(intent, SAVE_REQUEST_CODE)
+        }
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == SAVE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            data?.data?.let { uri ->
+                try {
+                    requireContext().contentResolver.openOutputStream(uri)?.use { outputStream ->
+                        FileInputStream(File(audioFilePath!!)).use { inputStream ->
+                            val buffer = ByteArray(1024)
+                            var length: Int
+                            while (inputStream.read(buffer).also { length = it } > 0) {
+                                outputStream.write(buffer, 0, length)
+                            }
+                        }
+                        Toast.makeText(requireContext(), "Recording saved!", Toast.LENGTH_SHORT).show()
+                    }
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                    Toast.makeText(requireContext(), "Failed to save recording", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
 
 
     private fun requestPermission() {
