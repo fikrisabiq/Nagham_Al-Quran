@@ -32,7 +32,7 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:textColor="@color/colorClick"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="@+id/img_item_photo"
             card_view:layout_constraintHorizontal_bias="0.0"
@@ -63,16 +63,41 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/rounded_border_background"
             android:textColor="@color/colorClick"
-            android:textSize="24sp"
+            android:textSize="26sp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
 
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/play_button"
+            card_view:layout_constraintTop_toBottomOf="@+id/seekBar"
             card_view:layout_constraintVertical_bias="1.0"
             tools:text="@string/arab" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorClick"
+            android:paddingLeft="8dp"
+            android:textSize="12sp"
+            card_view:layout_constraintBottom_toBottomOf="@+id/seekBar"
+            card_view:layout_constraintTop_toTopOf="@+id/seekBar"
+            card_view:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="16dp"
+            tools:text="0:00/0:00" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            android:progressBackgroundTint="@color/colorClick"
+            android:progressTint="@color/colorNavbar"
+            android:thumbTint="@color/colorButton"
+            card_view:layout_constraintStart_toEndOf="@+id/tv_time"
+            card_view:layout_constraintTop_toBottomOf="@+id/play_button" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

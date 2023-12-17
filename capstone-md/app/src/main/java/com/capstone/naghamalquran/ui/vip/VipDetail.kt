@@ -2,8 +2,10 @@ package com.capstone.naghamalquran.ui.vip
 
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.naghamalquran.R
@@ -12,9 +14,18 @@ class VipDetail : AppCompatActivity() {
 
     private var mediaPlayer: MediaPlayer? = null
     private lateinit var currentNaghamType: String // Menyimpan key_nagham saat ini
+
+    private lateinit var seekBar: SeekBar
+    private val handler = Handler()
+    private val updateSeekBarTask = object : Runnable {
+        override fun run() {
+            updateSeekBar()
+            handler.postDelayed(this, 1000) // Update setiap detik (sesuaikan sesuai kebutuhan)
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_nagham_detail)
+        setContentView(R.layout.activity_nagham_vip_detail)
 
 
 
@@ -31,6 +42,8 @@ class VipDetail : AppCompatActivity() {
         val tvDetailName = findViewById<TextView>(R.id.tv_tipe_nagham)
         val tvDetailDesc = findViewById<TextView>(R.id.tv_arab)
         val ivDetailPhoto = findViewById<ImageView>(R.id.img_item_photo)
+
+        seekBar = findViewById(R.id.seekBar)
 
         // Mendapatkan key_nagham dari intent
         currentNaghamType = dataNagham.nagham_type_vip
@@ -63,13 +76,14 @@ class VipDetail : AppCompatActivity() {
         // Inisialisasi MediaPlayer berdasarkan key_nagham
         mediaPlayer = MediaPlayer.create(this, getAudioResource(currentNaghamType))
 
-// Menambahkan pendengar OnCompletionListener untuk memulai ulang audio saat selesai
+        // Menambahkan pendengar OnCompletionListener untuk memulai ulang audio saat selesai
         mediaPlayer?.setOnCompletionListener {
             hearMeButton.text = getString(R.string.btn_play) // Ganti dengan teks yang sesuai
             mediaPlayer?.seekTo(0) // Mengatur pemutaran kembali ke awal
+            updateSeekBar()
         }
 
-// Menambahkan onClickListener untuk tombol "Hear Me"
+        // Menambahkan onClickListener untuk tombol "Hear Me"
         hearMeButton.setOnClickListener {
             // Memeriksa apakah MediaPlayer sedang berjalan
             if (mediaPlayer?.isPlaying == true) {
@@ -81,12 +95,55 @@ class VipDetail : AppCompatActivity() {
                 hearMeButton.text = getString(R.string.btn_pause) // Ganti dengan teks yang sesuai
             }
         }
+        mediaPlayer?.setOnPreparedListener {
+            seekBar.max = mediaPlayer?.duration ?: 0
+            updateSeekBar()
+            handler.postDelayed(updateSeekBarTask, 1000)
+        }
+
+        // Perbarui kemajuan SeekBar saat kemajuan MediaPlayer berubah
+        mediaPlayer?.setOnSeekCompleteListener {
+            updateSeekBar()
+        }
+
+
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                if (fromUser) {
+                    mediaPlayer?.seekTo(progress)
+                }
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                // Do nothing
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                // Do nothing
+            }
+        })
     }
+
+    private fun updateSeekBar() {
+        val currentPosition = mediaPlayer?.currentPosition ?: 0
+        val duration = mediaPlayer?.duration ?: 0
+
+        // Ubah waktu menjadi format menit:detik
+        val currentFormatted = String.format("%d:%02d", currentPosition / 1000 / 60, currentPosition / 1000 % 60)
+        val durationFormatted = String.format("%d:%02d", duration / 1000 / 60, duration / 1000 % 60)
+
+        // Atur teks TextView
+        findViewById<TextView>(R.id.tv_time).text = "$currentFormatted / $durationFormatted"
+
+        seekBar.progress = currentPosition
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()
         // Pastikan untuk melepaskan sumber daya MediaPlayer saat Activity dihancurkan
         mediaPlayer?.release()
+        handler.removeCallbacks(updateSeekBarTask)
     }
 
 
