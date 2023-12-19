@@ -17,7 +17,7 @@ import com.capstone.naghamalquran.ui.type.NaghamList
 
 class VipFragment : Fragment() {
 
-    private var _binding: FragmentDetailBinding? = null
+    private var _binding: FragmentVipBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -25,10 +25,10 @@ class VipFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDetailBinding.inflate(inflater, container, false)
+        _binding = FragmentVipBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val recyclerView: RecyclerView = binding.rvListNagham
+        val recyclerView: RecyclerView = binding.rvListVip
 
         // Inisialisasi list NaghamList
         val naghamListArrayVip = mutableListOf<VipDataList>()
