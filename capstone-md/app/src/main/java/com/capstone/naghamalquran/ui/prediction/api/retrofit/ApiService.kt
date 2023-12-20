@@ -7,10 +7,16 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
+    companion object {
+        const val API_KEY_HEADER = "API-Key: THhUy6ioBEOHKunkb0RIyqfUWiJQSgpA9JiRAsSnclRVmIVkZmkLIK6uuao7FSq2"
+    }
+
     @Multipart
-    @POST("predict?file")
+    @POST("predict")
+    @Headers(API_KEY_HEADER)
     fun addAudio(
-        @Part("notes") notes: RequestBody,
-        @Part image: MultipartBody.Part
+        @Part audio: MultipartBody.Part
     ): Call<ApiResponse2>
 }
+
+

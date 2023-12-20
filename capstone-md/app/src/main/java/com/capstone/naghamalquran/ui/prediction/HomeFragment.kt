@@ -29,6 +29,7 @@ import com.capstone.naghamalquran.R
 import com.capstone.naghamalquran.databinding.FragmentHomeBinding
 import com.capstone.naghamalquran.ui.prediction.api.response.ApiResponse2
 import com.capstone.naghamalquran.ui.prediction.api.retrofit.ApiConfig
+import com.capstone.naghamalquran.ui.prediction.api.retrofit.ApiService
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -57,6 +58,10 @@ class HomeFragment : Fragment() {
     private lateinit var btnPlay: Button
     private lateinit var btnSave: Button // Add button declaration
     private var currentRecordingName: String? = null // Variable to store the recording name
+
+//    private val apiKey = "THhUy6ioBEOHKunkb0RIyqfUWiJQSgpA9JiRAsSnclRVmIVkZmkLIK6uuao7FSq2"
+
+    private val apiKey = RequestBody.create("text/plain".toMediaTypeOrNull(), "THhUy6ioBEOHKunkb0RIyqfUWiJQSgpA9JiRAsSnclRVmIVkZmkLIK6uuao7FSq2")
 
     companion object {
         private const val REQUEST_PERMISSION_CODE = 1
@@ -207,12 +212,16 @@ class HomeFragment : Fragment() {
             binding.progressBar.visibility = View.VISIBLE
 
             // Anda mungkin perlu mengganti "notes" dengan parameter yang sesuai
-            val notes = "Catatan Pengguna"
-            val notesBody = RequestBody.create("text/plain".toMediaTypeOrNull(), notes)
+//            val notes = "Catatan Pengguna"
+//            val notesBody = RequestBody.create("text/plain".toMediaTypeOrNull(), notes)
 
-            // Kirim request ke API
+            // Kirim request ke API dengan menyertakan API key
             val apiService = ApiConfig.getApiService()
-            val call = apiService.addAudio(notesBody, body)
+            val call = apiService.addAudio(body).apply {
+                request().newBuilder().header("API-Key", "THhUy6ioBEOHKunkb0RIyqfUWiJQSgpA9JiRAsSnclRVmIVkZmkLIK6uuao7FSq2").build()
+            }
+
+
 
             call.enqueue(object : Callback<ApiResponse2> {
                 override fun onResponse(call: Call<ApiResponse2>, response: Response<ApiResponse2>) {
