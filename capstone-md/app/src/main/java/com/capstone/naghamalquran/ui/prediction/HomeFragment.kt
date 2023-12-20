@@ -54,6 +54,7 @@ class HomeFragment : Fragment() {
 
     private var isRecordingToastShown = false
 
+    private lateinit var btnPlay: Button
     private lateinit var btnSave: Button // Add button declaration
     private var currentRecordingName: String? = null // Variable to store the recording name
 
@@ -71,7 +72,9 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         val btnRecord: ImageButton = binding.btnRecord
-        val btnPlay: Button = binding.btnPlay
+//        val btnPlay: Button = binding.btnPlay
+        btnSave = binding.btnSave
+        btnPlay = binding.btnPlay
 
         // Setiap kali tombol rekam ditekan
         btnRecord.setOnClickListener {
@@ -101,18 +104,26 @@ class HomeFragment : Fragment() {
             }
         }
 
-        btnSave = binding.btnSave // Initialize the button from the layout
 
         // Set onClickListener for the "Save" button
         btnSave.setOnClickListener {
             saveRecording()
         }
 
+        // Set initial visibility of the buttons
+        updateButtonVisibility()
+
 
         // Meminta izin rekam audio
         requestPermission()
 
         return root
+    }
+
+    // Add this function to update the visibility of the buttons
+    private fun updateButtonVisibility() {
+        btnSave.visibility = if (isRecording) View.GONE else View.VISIBLE
+        btnPlay.visibility = if (isRecording) View.GONE else View.VISIBLE
     }
 
     private fun startRecording() {
@@ -169,6 +180,8 @@ class HomeFragment : Fragment() {
         }
 
         binding.btnRecord.startAnimation(scaleAnimation)
+        // Update button visibility
+        updateButtonVisibility()
 
     }
 
@@ -181,6 +194,9 @@ class HomeFragment : Fragment() {
 
         // Stop rotate animation for the record button
         binding.btnRecord.clearAnimation()
+
+        // Update button visibility
+        updateButtonVisibility()
 
         // Setelah merekam dihentikan, kirim file audio ke API
         if (audioFilePath != null) {
