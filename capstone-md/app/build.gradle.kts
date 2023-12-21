@@ -40,6 +40,9 @@ android {
 
 }
 
+// Read API key from gradle.properties
+val apiKey: String by project
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")

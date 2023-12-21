@@ -14,7 +14,7 @@
 
     <item
         android:id="@+id/navigation_vip"
-        android:icon="@drawable/ic_vip"
+        android:icon="@drawable/ic_vip_2"
         android:title="@string/title_vip"
         />
 
