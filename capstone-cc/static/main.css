@@ -1,0 +1,433 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+body {
+  background-image: linear-gradient(#00b6ff, #066cff);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.record-area {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width .5s ease;
+}
+
+.record {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ripple {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.request-loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: #0199fe;
+  box-shadow: 0 10px 20px rgba(0,0,0,.10);
+  cursor: pointer;
+}
+
+.request-loader .layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #4fb3fe;
+  border-top: 1px  solid rgba(255, 255, 255, 0.3);
+}
+
+.request-loader .layer .mic,
+.request-loader .layer .stop {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.request-loader .layer .mic {
+  display: block;
+}
+
+.request-loader .layer .stop {
+  display: none;
+}
+
+.request-loader .layer svg {
+  width: 60px;
+  height: 60px;
+  fill: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+.info {
+  width: 0;
+  height: 100%;
+  transition: width .5s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-outer {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: .5s ease;
+}
+
+.card-slider .card {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.card-slider .card .text-info {
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.listen .text-info {
+  margin-top: 2rem;
+}
+
+.process .text-info {
+  margin-top: -1rem;
+}
+
+.result .text-info {
+  margin-top: 2rem;
+}
+
+.result h6 {
+  font-size: 18px;
+}
+
+.result .selesai {
+  cursor: pointer;
+  font-size: 15px;
+  padding: 6px 12px;
+  color: white;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.listen.aktif {
+  opacity: 1;
+}
+.process.aktif {
+  opacity: 1;
+}
+.result.aktif {
+  opacity: 1;
+}
+
+
+/* IS RECORDING ===================================================================== */
+
+.container.is-show .info {
+  width: 400px;
+}
+
+.container.is-show .record-area {
+  width: calc(100% - 400px);
+}
+
+.container.is-recording .request-loader .layer .mic {
+  display: none;
+}
+
+.container.is-recording .request-loader .layer .stop {
+  display: block;
+}
+
+
+.container.is-recording .record {
+  animation-name: skalasi;
+  animation-delay: 1s;
+  animation-duration: 2.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+.container.is-recording .ripple {
+  animation-duration: 2.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
+}
+
+.container.is-recording .ripple.e-1 {
+  width: 75px;
+  height: 75px;
+  animation-name: ripple-1;
+  animation-delay: 0.2s;
+}
+.container.is-recording .ripple.e-2 {
+  width: 105px;
+  height: 105px;
+  animation-name: ripple-2;
+  animation-delay: 0.1s;
+}
+.container.is-recording .ripple.e-3 {
+  width: 135px;
+  height: 135px;
+  animation-name: ripple-3;
+  animation-delay: 0s;
+}
+
+.container.is-recording .request-loader::before {
+  opacity: 0;
+  position: absolute;
+  content: "";
+  height: 350%;
+  width: 350%;
+  border: 4px solid rgba(255,255,255, 0.2);
+  border-radius: 100%;
+  animation-name: ripple-outline;
+  animation-duration: 2.4s;
+  animation-delay: 0.6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);;
+  z-index: -1;
+}
+
+.container.is-recording .request-loader::after {
+  opacity: 0;
+  position: absolute;
+  content: "";
+  height: 450%;
+  width: 450%;
+  border: 4px solid rgba(255,255,255, 0.2);
+  border-radius: 100%;
+  animation-name: ripple-outline;
+  animation-duration: 2.4s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);;
+  z-index: -1;
+}
+
+
+
+/* IS PREDICT ========================================================================= */
+
+.container.is-predict .card-slider {
+  transform: translateY(-200px);
+}
+
+.container.is-result .card-slider {
+  transform: translateY(-400px);
+}
+
+
+/* KEYFRAME ========================================================================= */
+
+
+@keyframes ripple-1 {
+  0% {
+    opacity: 1;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  10% {
+    opacity: 1;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  90% {
+    opacity: 0.1;
+    transform: scale3d(2, 2, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.95, 1.95, 1);
+  }
+}
+
+
+@keyframes ripple-2 {
+  0% {
+    opacity: 1;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  5% {
+    opacity: 1;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  85% {
+    opacity: 0.1;
+    transform: scale3d(2, 2, 1);
+  }
+  90% {
+    opacity: 0.1;
+    transform: scale3d(2, 2, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.95, 1.95, 1);
+  }
+}
+
+@keyframes ripple-3 {
+  0% {
+    opacity: 1;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  80% {
+    opacity: 0.1;
+    transform: scale3d(2, 2, 1);
+  }
+  85% {
+    opacity: 0.1;
+    transform: scale3d(2, 2, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.95, 1.95, 1);
+  }
+}
+
+
+@keyframes ripple-outline {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.5, 1.5, 1);
+  }
+}
+
+
+@keyframes skalasi {
+  0% {
+    transform: scale(1.0);
+  }
+  15% {
+    transform: scale(1.14);
+  }
+  30% {
+    transform: scale(1.07);
+  }
+  45% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+
+
+/* MOBILE ============================================================= */
+
+
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .info {
+    width: 100%;
+    height: 0;
+    align-items: start;
+    transition: height .5s ease;
+  }
+
+  .record-area {
+    width: 100%;
+    transition: height .5s ease;
+  }
+
+  /* is recording */
+
+  .container.is-show .info {
+    height: 200px;
+    width: 100%;
+  }
+
+  .container.is-show .card-outer {
+    bottom: 4rem;
+  }
+
+  .container.is-show .record-area {
+    height: calc(100% - 200px);
+    width: 100%;
+  }
+
+}
