@@ -8,5 +8,8 @@ In this repository consist of many fiels:
 2. main.ipynb : notebook for deploying model
 3. requirements.txt : requirement library and other source for create and deploy model
 
+For the h5 model because the size is too large, the file is in this link:
+https://drive.google.com/drive/folders/1I2Esz_dQcphslL3zzlCCng4Ta7fLKnoq?usp=sharing
+
 This is the evalution of our model:
 ![image](https://github.com/fikrisabiq/Nagham_Al-Quran/assets/81612058/6ea662a1-d97a-44be-92dc-7898ab2af96b)
