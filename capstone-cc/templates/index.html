@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Record</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+</head>
+<body>
+<div class="container">
+  <div class="record-area">
+    <div class="record">
+      <div class="ripple e-1"></div>
+      <div class="ripple e-2"></div>
+      <div class="ripple e-3"></div>
+      <div class="request-loader">
+        <div class="layer">
+
+          <div class="mic">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12 16c2.206 0 4-1.794 4-4V6c0-2.217-1.785-4.021-3.979-4.021a.933.933 0 0 0-.209.025A4.006 4.006 0 0 0 8 6v6c0 2.206 1.794 4 4 4z"/>
+              <path d="M11 19.931V22h2v-2.069c3.939-.495 7-3.858 7-7.931h-2c0 3.309-2.691 6-6 6s-6-2.691-6-6H4c0 4.072 3.061 7.436 7 7.931z"/>
+            </svg>
+          </div>
+
+          <div class="stop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+              <path d="M9 9h6v6H9z"/>
+            </svg>
+          </div>
+              
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="info">
+    <div class="card-outer">
+      <div class="card-slider">
+        <div class="card listen">
+          <dotlottie-player src="https://lottie.host/9effe5b5-8a68-4611-8b4a-0078482ece55/qALRX3KppW.json" background="transparent" speed="1" style="height: 50px;" loop autoplay></dotlottie-player>
+          <span class="text-info">Mendengarkan</span>
+        </div>
+        <div class="card process">
+          <dotlottie-player src="https://lottie.host/6a790c95-f911-4bce-a886-60d7d699f3c5/Wsvh9th6S0.json" background="transparent" speed="1" style="height: 120px; margin-top: -3rem;" loop autoplay></dotlottie-player>
+          <span class="text-info">Memprediksi</span>
+        </div>
+        <div class="card result">
+          <h6>Hasil</h6>
+          <span class="text-info" style="margin: 2rem 0;" id="show_result"></span>
+          <div class="selesai">Selesai</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script>
+
+document.addEventListener("keydown", function (event){
+  if (event.ctrlKey){
+     event.preventDefault();
+  }
+  if(event.keyCode == 123){
+     event.preventDefault();
+  }
+});
+
+document.addEventListener('contextmenu', 
+  event => event.preventDefault()
+);
+
+</script> -->
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>
